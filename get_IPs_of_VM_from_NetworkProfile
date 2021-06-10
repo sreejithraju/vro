@@ -1,0 +1,9 @@
+var entity = vcacVm.getEntity()
+
+var addressEntities = entity.getLink(vcacHost,"StaticIPv4Addresses")
+//System.log( entity.getLink(vcacHost,"StaticIPv4Addresses"))
+ips = []
+for each(var address in addressEntities){
+	System.log(address.getProperty("IPv4Address"))
+	ips.push(address.getProperty("IPv4Address"))
+}
